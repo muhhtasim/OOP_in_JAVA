@@ -6,42 +6,60 @@ import java.util.HashMap;
 
 public class MedicineInfoApp {
     int boardWidth = 450;
-    int boardHeight = 650;
+    int boardHeight = 700;
 
     // Colors
-    Color bgColor = new Color(28, 28, 28);
-    Color cardColor = new Color(45, 45, 45);
+    Color bgColor = new Color(25, 25, 25);
+    Color cardColor = new Color(40, 40, 40);
     Color buttonColor = new Color(255, 149, 0);
-    Color textColor = new Color(255, 255, 255);
-    Color accentColor = new Color(52, 152, 219);
+    Color textColor = Color.WHITE;
+    Color accentColor = new Color(41, 128, 185);
 
     JFrame frame = new JFrame("💊 Medicine Info App");
     JLabel titleLabel = new JLabel("Select a Medicine");
     JTextArea infoArea = new JTextArea();
     JPanel buttonPanel = new JPanel();
-
-    // Medicine data
     HashMap<String, String> medicineData = new HashMap<>();
 
     MedicineInfoApp() {
-        // Medicine details
-        medicineData.put("Napa", "💊 **Napa (Paracetamol)**\n\nUsed to relieve fever, headache, toothache, and muscle pain. Suitable for mild to moderate pain relief.");
-        medicineData.put("Paracetamol", "💊 **Paracetamol**\n\nA common painkiller and fever reducer. Helps relieve headaches, muscle pain, and colds.");
-        medicineData.put("Omeprazole", "💊 **Omeprazole**\n\nReduces stomach acid. Used for acid reflux, heartburn, and ulcers.");
-        medicineData.put("Seclo", "💊 **Seclo (Omeprazole)**\n\nTreats gastritis and acidity. Best taken before meals to reduce stomach discomfort.");
-        medicineData.put("Amodis", "💊 **Amodis**\n\nUsed for diarrhea control and restoring bowel balance. Take as prescribed.");
-        medicineData.put("Histacin", "💊 **Histacin**\n\nAn antihistamine that relieves allergy symptoms like sneezing, itching, and runny nose.");
-        medicineData.put("Cef-3", "💊 **Cef-3 (Cefixime)**\n\nAn antibiotic for bacterial infections such as tonsillitis, bronchitis, and urinary infections.");
-        medicineData.put("Losectil", "💊 **Losectil**\n\nUsed for acid reflux and gastric ulcers. Helps reduce acid and heal the stomach lining.");
-        medicineData.put("Antacid", "💊 **Antacid Tablets**\n\nNeutralizes excess stomach acid. Provides quick relief from heartburn and indigestion.");
-        medicineData.put("Flagyl", "💊 **Flagyl (Metronidazole)**\n\nAn antibiotic used to treat bacterial and parasitic infections, especially in the stomach and intestines.");
-        medicineData.put("Azithromycin", "💊 **Azithromycin**\n\nA broad-spectrum antibiotic used to treat respiratory infections, skin infections, and STDs.");
-        medicineData.put("Cetirizine", "💊 **Cetirizine**\n\nAn allergy medicine that relieves itching, runny nose, and watery eyes. Usually taken once daily.");
-        medicineData.put("Ranitidine", "💊 **Ranitidine**\n\nReduces stomach acid and treats heartburn, gastritis, and acid reflux. Take before meals.");
-        medicineData.put("Napa Extra", "💊 **Napa Extra**\n\nA stronger version of Napa combining paracetamol and caffeine. Used for headaches and migraines.");
-        medicineData.put("Bextrum", "💊 **Bextrum**\n\nA multivitamin supplement that supports immunity, energy, and overall health.");
-        medicineData.put("Maxpro", "💊 **Maxpro (Esomeprazole)**\n\nUsed to reduce stomach acid and prevent ulcers and gastritis.");
-        medicineData.put("ORS", "💧 **ORS (Oral Rehydration Salts)**\n\nRestores body fluids and electrolytes lost due to dehydration, vomiting, or diarrhea.");
+        // Medicine list (37 medicines)
+        medicineData.put("Napa", "💊 **Napa (Paracetamol)**\n\nUsed for fever, headache, toothache, and mild pain relief.");
+        medicineData.put("Paracetamol", "💊 **Paracetamol**\n\nCommon fever and pain reliever. Helps reduce headache and body ache.");
+        medicineData.put("Omeprazole", "💊 **Omeprazole**\n\nReduces stomach acid. Used for acid reflux and ulcers.");
+        medicineData.put("Seclo", "💊 **Seclo (Omeprazole)**\n\nTreats acidity and gastritis. Take before meals.");
+        medicineData.put("Amodis", "💊 **Amodis**\n\nUsed for diarrhea and bowel issues. Restores digestive balance.");
+        medicineData.put("Histacin", "💊 **Histacin**\n\nRelieves allergy symptoms like sneezing and itching.");
+        medicineData.put("Cef-3", "💊 **Cef-3 (Cefixime)**\n\nAntibiotic for bacterial infections like tonsillitis or bronchitis.");
+        medicineData.put("Losectil", "💊 **Losectil**\n\nUsed for acid reflux and ulcers. Reduces excess stomach acid.");
+        medicineData.put("Antacid", "💊 **Antacid Tablets**\n\nNeutralizes stomach acid. Quick relief from indigestion.");
+        medicineData.put("Flagyl", "💊 **Flagyl (Metronidazole)**\n\nTreats bacterial and parasitic infections.");
+        medicineData.put("Azithromycin", "💊 **Azithromycin**\n\nAntibiotic used for respiratory and skin infections.");
+        medicineData.put("Cetirizine", "💊 **Cetirizine**\n\nAllergy medicine for runny nose, watery eyes, and itching.");
+        medicineData.put("Ranitidine", "💊 **Ranitidine**\n\nUsed for heartburn, gastritis, and acid reflux.");
+        medicineData.put("Napa Extra", "💊 **Napa Extra**\n\nParacetamol with caffeine for stronger headache relief.");
+        medicineData.put("Bextrum", "💊 **Bextrum**\n\nMultivitamin for immunity, energy, and health.");
+        medicineData.put("Maxpro", "💊 **Maxpro (Esomeprazole)**\n\nPrevents ulcers and reduces acid.");
+        medicineData.put("ORS", "💧 **ORS (Oral Rehydration Salts)**\n\nRestores body fluids after dehydration.");
+        medicineData.put("Alatrol", "💊 **Alatrol**\n\nAntihistamine used for allergies and itching.");
+        medicineData.put("Panadol", "💊 **Panadol**\n\nPain reliever and fever reducer.");
+        medicineData.put("Nexum", "💊 **Nexum (Esomeprazole)**\n\nUsed for acid reflux, heartburn, and gastritis.");
+        medicineData.put("Calbo-D", "💊 **Calbo-D**\n\nCalcium and Vitamin D supplement for bone strength.");
+        medicineData.put("Zimax", "💊 **Zimax (Azithromycin)**\n\nAntibiotic for respiratory and throat infections.");
+        medicineData.put("Ciprocin", "💊 **Ciprocin (Ciprofloxacin)**\n\nAntibiotic for urinary and skin infections.");
+        medicineData.put("Norflox", "💊 **Norflox**\n\nUsed for urinary tract and intestinal infections.");
+        medicineData.put("Ace", "💊 **Ace (Paracetamol)**\n\nPain reliever and fever reducer, similar to Napa.");
+        medicineData.put("Monas", "💊 **Monas (Montelukast)**\n\nUsed to treat asthma and allergic rhinitis.");
+        medicineData.put("Secef", "💊 **Secef (Cefuroxime)**\n\nBroad-spectrum antibiotic for bacterial infections.");
+        medicineData.put("Rupafen", "💊 **Rupafen (Rupatadine)**\n\nEffective for allergy and skin rashes.");
+        medicineData.put("Ciproxin", "💊 **Ciproxin**\n\nAntibiotic used for urinary and stomach infections.");
+        medicineData.put("Nexum 20", "💊 **Nexum 20mg**\n\nReduces stomach acid, relieves gastritis.");
+        medicineData.put("Emistat", "💊 **Emistat**\n\nPrevents nausea and vomiting.");
+        medicineData.put("Ace Plus", "💊 **Ace Plus**\n\nCombination painkiller with caffeine for headaches.");
+        medicineData.put("Zinc", "💊 **Zinc Tablet**\n\nImproves immunity and helps in diarrhea recovery.");
+        medicineData.put("Fexo", "💊 **Fexo (Fexofenadine)**\n\nAllergy relief medicine with minimal drowsiness.");
+        medicineData.put("Myospaz", "💊 **Myospaz**\n\nMuscle relaxant used for back pain and cramps.");
+        medicineData.put("Bisolvon", "💊 **Bisolvon**\n\nUsed for cough and mucus clearance.");
+        medicineData.put("Ambroxol", "💊 **Ambroxol**\n\nExpectorant for cough and chest congestion.");
 
         // Frame setup
         frame.setSize(boardWidth, boardHeight);
@@ -51,7 +69,7 @@ public class MedicineInfoApp {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
 
-        // Title label
+        // Title
         titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 26));
         titleLabel.setForeground(textColor);
@@ -72,22 +90,13 @@ public class MedicineInfoApp {
         frame.add(scrollPane, BorderLayout.CENTER);
 
         // Button panel
-        buttonPanel.setLayout(new GridLayout(5, 3, 10, 10));
+        buttonPanel.setLayout(new GridLayout(0, 3, 10, 10));
         buttonPanel.setBackground(bgColor);
         frame.add(buttonPanel, BorderLayout.SOUTH);
 
-        String[] medicines = {
-            "Napa", "Paracetamol", "Omeprazole",
-            "Seclo", "Amodis", "Histacin",
-            "Cef-3", "Losectil", "Antacid",
-            "Flagyl", "Azithromycin", "Cetirizine",
-            "Ranitidine", "Napa Extra", "Bextrum",
-            "Maxpro", "ORS"
-        };
-
-        for (String med : medicines) {
+        for (String med : medicineData.keySet()) {
             JButton btn = new JButton(med);
-            btn.setFont(new Font("Arial", Font.BOLD, 16));
+            btn.setFont(new Font("Arial", Font.BOLD, 14));
             btn.setBackground(buttonColor);
             btn.setForeground(Color.white);
             btn.setFocusPainted(false);
